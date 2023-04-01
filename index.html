@@ -1,0 +1,77 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<style>
+    .hello {
+        color : blue;
+    }
+    .another {
+        color: red;
+    }
+    .reseting {
+        color:  darkgreen;
+    }
+
+    button {
+
+        padding: 10px 10px;
+        background-color: aqua;
+    }
+
+</style>
+</head>
+<body>
+<h1 class="changeNumber">0</h1>
+<button class="increase">Increase</button>
+<button class="decrease">Decrease</button>
+<button class="reset">Reset</button>
+<script>
+
+
+let number = 0;
+let pk = document.querySelector(".changeNumber");
+
+
+function numberIncrease() {
+    number = number+1;
+    pk.classList.add("hello")
+    pk.textContent = number;
+    pk.classList.remove("another")
+    pk.classList.remove("reseting")
+
+}
+function numberDecrease() {
+    number = number-1;
+    pk.classList.add("another")
+    pk.textContent = number;
+    pk.classList.remove("hello")
+    pk.classList.remove("reseting")
+
+}
+
+const IncreaseButton = document.querySelector(".increase");
+IncreaseButton.addEventListener("click",numberIncrease)
+
+const DecreaseButton = document.querySelector(".decrease");
+DecreaseButton.addEventListener("click",numberDecrease);
+
+const resting = document.querySelector(".reset");
+resting.addEventListener("click",() => {
+    number = 0
+    pk.classList.add("reseting")
+    pk.textContent = number ;
+    pk.classList.remove("hello");
+    pk.classList.remove("remove");
+
+
+
+
+});
+
+</script>
+
+
+</body>
+</html>
